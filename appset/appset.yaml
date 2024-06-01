@@ -9,7 +9,6 @@ spec:
         github:
           owner: bekurin
           repo: preview_env
-        requeueAfterSeconds: 15
   template:
     metadata:
       name: 'simple-deployment-{{branch}}-{{number}}'
