@@ -22,14 +22,8 @@ spec:
             - name: "image.tag"
               value: '{{head_sha}}'
             - name: "namespace"
-              value: 'simple-deployment-{{branch}}-{{number}}'
-      project: default
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
-        syncOptions:
-          - CreateNamespace=true
+              value: 'default'
+      project: preview
       destination:
         server: https://kubernetes.default.svc
-        namespace: 'simple-deployment-{{branch}}-{{number}}'
+        namespace: 'default'
