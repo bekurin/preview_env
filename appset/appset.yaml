@@ -9,11 +9,6 @@ spec:
         github:
           owner: bekurin
           repo: preview_env
-          tokenRef:
-            secretName: repo-3066764709
-            key: password
-          labels:
-            - preview
         requeueAfterSeconds: 15
   template:
     metadata:
