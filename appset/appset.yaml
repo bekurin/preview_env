@@ -11,7 +11,7 @@ spec:
           repo: preview_env
   template:
     metadata:
-      name: 'simple-deployment-{{branch}}-{{number}}'
+      name: 'preview-{{branch}}-{{number}}'
     spec:
       source:
         repoURL: https://github.com/bekurin/preview_env.git
