@@ -8,22 +8,22 @@ spec:
     - pullRequest:
         github:
           owner: bekurin
-          repo: preview_env
+          repo: preview_env # repository name
   template:
     metadata:
       name: 'preview-{{branch}}-{{number}}'
     spec:
       source:
-        repoURL: https://github.com/bekurin/preview_env.git
-        targetRevision: '{{head_sha}}'
-        path: helm
+        repoURL: https://github.com/bekurin/preview_env.git # helm chart url
+        targetRevision: '{{head_sha}}' # commit revision
+        path: preview/ # helm chart path
         helm:
           parameters:
             - name: "image.tag"
-              value: '{{head_sha}}'
+              value: '{{head_sha}}' # docker image path
             - name: "namespace"
-              value: 'default'
-      project: preview
+              value: 'default' # namespace if you want to use unique namespace use 'branch' and 'number'
+      project: preview # <- what is this?
       destination:
         server: https://kubernetes.default.svc
         namespace: 'default'
